@@ -11,6 +11,7 @@ const displayCatagorisNewsPortal = async () => {
     const catagorisContainer = document.getElementById('catagories-container');
     displayCatagoris.data.news_category.forEach(data => {
         const div = document.createElement('div');
+        div.classList.add('md:px-3')
         div.innerHTML = `
         
         <a href="">${data.category_name}</a>
