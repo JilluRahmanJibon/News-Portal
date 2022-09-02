@@ -41,15 +41,25 @@ const displayData = (data) => {
         const div = document.createElement('div');
         div.classList.add('py-5')
         div.innerHTML = `
-<div class="card card-side bg-base-100 shadow-xl">
+        <div class="card card-side bg-base-100 shadow-xl">
         <img src="${element.image_url}" alt="Movie" class="w-1/3">
                 <div class="card-body">
-                    <h2 class="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Watch</button>
+                    <h2 class="card-title">${element.title}</h2>
+                    <p class="py-4">${element.details.slice(0, 300) + '...'} </p>
+                    <div class="flex justify-between items-center content-center">
+                    <div class="flex gap-3 items-center">
+                        <div><img src="${element.author.img}" alt="" class="w-10 h-10 rounded-full">
+                        </div>
+                        <div>
+                            <h1>${element.author.name ? element.author.name : 'N/A'}</h1>
+                            <h1>${element.author.published_date}</h1>
+                        </div>
                     </div>
+                    <div>${element.total_view}</div>
+                    <div></div>
                 </div>
+                </div>
+                
             </div>
 `;
         cardContainer.appendChild(div)
